@@ -1,0 +1,11 @@
+#TODO: Read http://www.secnetix.de/olli/Python/block_indentation.hawk
+
+Goal = MainMethod
+
+MainMethod = 'def' 'main' ':' (INDENT Statement)* DEDENT
+
+Statement  = Expression
+           | 'print' Expression
+
+Expression = <INTEGER_LITERAL> + <INTEGER_LITERAL>
+           | <INTEGER_LITERAL>
