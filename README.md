@@ -10,3 +10,17 @@
 | _Statement_   | = | __print__ _Expression_                                       |
 | _Expression_  | = | _Integer_ __+__ _Integer_                                    |
 |               |   | _Integer_                                                    |
+
+## Example programs
+
+### 1.
+```python
+def main:
+    print 1+2
+```
+### 2.
+```python
+def main:
+    print 92
+    print 1+1
+```
