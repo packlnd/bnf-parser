@@ -2,7 +2,7 @@
 
 Goal = MainMethod
 
-MainMethod = 'def' 'main' ':' INDENT (Statement)* DEDENT
+MainMethod = 'func' 'main' ':' INDENT (Statement)* DEDENT
 
 Statement  = 'print' Expression
 
