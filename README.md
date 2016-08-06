@@ -19,10 +19,41 @@ def main:
     print 1
     print 1+2
 ```
-__Tokens:__ [DEF, MAIN, COLON, INDENT, PRINT, INT(1), PRINT, INT(1), PLUS, INT(2), DEDENT]
+__Tokens:__
+```
+[DEF, MAIN, COLON, INDENT, PRINT, INT(1), PRINT, INT(1), PLUS, INT(2), DEDENT]
+```
+
+__Parse tree:__
+```
+Goal(
+    MainMethod([
+        PrintStatement(
+            IntExpression(1)
+        ),
+        PrintStatement(
+            AddExpression(1, 2)
+        ),
+    ])
+)
+```
 ### 2.
 ```python
 def main:
     print 39
 ```
-__Tokens:__ [DEF, MAIN, COLON, INDENT, PRINT, INT(39), DEDENT]
+__Tokens:__ 
+```
+[DEF, MAIN, COLON, INDENT, PRINT, INT(39), DEDENT]
+```
+
+__Parse tree:__
+```
+Goal(
+    MainMethod([
+        PrintStatement(
+            IntExpression(39)
+        ),
+    ])
+)
+```
