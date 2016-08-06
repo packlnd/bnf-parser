@@ -25,7 +25,7 @@ Use LLVM backend
 ## Example programs
 
 ### 1.
-```python
+```go
 func main:
     print 1
     print 1+2
@@ -55,7 +55,7 @@ __Output:__
 3
 ```
 ### 2.
-```python
+```go
 func main:
     print 39
 ```
