@@ -1,6 +1,20 @@
 # mini-compiler
 :umbrella:
 
+File extension: `.patrik`
+
+## Example usage:
+Use as an interpreter
+`python file.patrik interpreter`
+
+__To be implemented:__
+
+Use LLVM backend
+`python file.patrik llvm`
+
+Use JVM backend
+`python file.patrik jvm`
+
 ## Grammar:
 
 |               |   |                                                              |
@@ -37,6 +51,12 @@ Goal(
     ])
 )
 ```
+
+__Output:__
+```
+1
+3
+```
 ### 2.
 ```python
 def main:
@@ -56,4 +76,9 @@ Goal(
         ),
     ])
 )
+```
+
+__Output:__
+```
+39
 ```
