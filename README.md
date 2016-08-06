@@ -16,11 +16,13 @@
 ### 1.
 ```python
 def main:
+    print 1
     print 1+2
 ```
+__Tokens:__ [DEF, MAIN, COLON, INDENT, PRINT, INT(1), PRINT, INT(1), PLUS, INT(2), DEDENT]
 ### 2.
 ```python
 def main:
-    print 92
-    print 1+1
+    print 39
 ```
+__Tokens:__ [DEF, MAIN, COLON, INDENT, PRINT, INT(39), DEDENT]
