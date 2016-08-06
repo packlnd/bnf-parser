@@ -12,9 +12,6 @@ __To be implemented:__
 Use LLVM backend
 `python file.patrik llvm`
 
-Use JVM backend
-`python file.patrik jvm`
-
 ## Grammar:
 
 |               |   |                                                              |
