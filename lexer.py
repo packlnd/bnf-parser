@@ -7,16 +7,19 @@ def _is_digit(c):
     return c in '0123456789'
 
 def tokenize(fn):
-    current_indentation = 0
+    #current_indentation = 0
+    i_list = [0]
     token_list = []
     with open(fn, 'r') as f:
         lines = f.readlines()
     for line in lines:
         indentation = _determine_indentation(line)
-        if indentation > current_indentation:
+        if indentation > i_list[0]:
             token_list.append(INDENT())
-        elif indentation < current_indentation:
+            i_list.insert(0, indentation)
+        elif indentation < i_list[0]:
             token_list.append(DEDENT())
+            i_list.insert(0, indentation)
         current_indentation = indentation
         line = line.strip()
         pos = -1
@@ -48,4 +51,7 @@ def tokenize(fn):
                 continue
             else:
                 token_list.append(BAD())
+    i_list.pop()
+    for i in i_list:
+       token_list.append(DEDENT())
     return token_list
