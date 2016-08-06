@@ -44,6 +44,8 @@ class PRINT(TOKEN):
 class PLUS(TOKEN):
     def __init__(self): self.s = 'PLUS'
 class INTLIT(TOKEN):
-    def __init__(self, n): self.s = 'INT(%s)' % n
+    def __init__(self, n):
+        self.n = int(n)
+        self.s = 'INT(%s)' % n
 class BAD(TOKEN):
     def __init__(self): self.s = 'BAD'
