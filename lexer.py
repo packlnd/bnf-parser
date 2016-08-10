@@ -29,10 +29,10 @@ def tokenize(fn):
                 token_list.append(COLON())
             elif line[pos] == '+':
                 token_list.append(PLUS())
-            elif line[pos] == 'd':
-                if line[pos:pos+3] == 'def':
-                    token_list.append(DEF())
-                    pos += 2
+            elif line[pos] == 'f':
+                if line[pos:pos+4] == 'func':
+                    token_list.append(FUNC())
+                    pos += 3
             elif line[pos] == 'm':
                 if line[pos:pos+4] == 'main':
                     token_list.append(MAIN())

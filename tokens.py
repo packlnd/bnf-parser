@@ -33,8 +33,8 @@ class INDENT(TOKEN):
     def __init__(self): self.s = 'INDENT'
 class DEDENT(TOKEN):
     def __init__(self): self.s = 'DEDENT'
-class DEF(TOKEN):
-    def __init__(self): self.s = 'DEF'
+class FUNC(TOKEN):
+    def __init__(self): self.s = 'FUNC'
 class MAIN(TOKEN):
     def __init__(self): self.s = 'MAIN'
 class COLON(TOKEN):

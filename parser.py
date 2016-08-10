@@ -15,7 +15,7 @@ def parse_goal(token_list):
     return Goal(parse_main(token_list))
 
 def parse_main(token_list):
-    _eat(token_list, DEF)
+    _eat(token_list, FUNC)
     _eat(token_list, MAIN)
     _eat(token_list, COLON)
     _eat(token_list, INDENT)
