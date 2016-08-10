@@ -79,3 +79,6 @@ __Output:__
 ```
 39
 ```
+
+## Ideas
+http://www.csc.kth.se/~phaller/compilers/labs/lab7.html
