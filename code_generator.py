@@ -1,0 +1,2 @@
+def generate(goal):
+    pass
