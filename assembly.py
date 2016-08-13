@@ -1,3 +1,9 @@
+INSTR_MOV = 'mov'
+INSTR_SUB = 'add'
+INSTR_SUB = 'sub'
+
+# TODO: http://www.fabiensanglard.net/macosxassembly/index.php
+
 def global_routine(name):
     return (
         'global %s\n'
