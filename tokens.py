@@ -24,28 +24,34 @@ class IntExpression(Expression):
         self.num = n
 
 # TOKENS
-class TOKEN:
-    def __init__(self): self.s = 'TOKEN'
-    def __str__(self): return self.s
-    def __repr__(self): return self.s
-    def __unicode__(self): return self.s
+class TOKEN(object):
+    _id = 0
+    def __init__(self, name):
+        TOKEN._id += 1
+        self.token_id = TOKEN._id
+        self.s = name
+
+    def __repr__(self):
+        return '%s_%s' % (
+            self.s,
+            self.token_id
+        )
+
 class INDENT(TOKEN):
-    def __init__(self): self.s = 'INDENT'
+    def __init__(self): super(INDENT, self).__init__('INDENT')
 class DEDENT(TOKEN):
-    def __init__(self): self.s = 'DEDENT'
+    def __init__(self): super(DEDENT, self).__init__('DEDENT')
 class FUNC(TOKEN):
-    def __init__(self): self.s = 'FUNC'
+    def __init__(self): super(FUNC, self).__init__('FUNC')
 class MAIN(TOKEN):
-    def __init__(self): self.s = 'MAIN'
+    def __init__(self): super(MAIN, self).__init__('MAIN')
 class COLON(TOKEN):
-    def __init__(self): self.s = 'COLON'
+    def __init__(self): super(COLON, self).__init__('COLON')
 class PRINT(TOKEN):
-    def __init__(self): self.s = 'PRINT'
+    def __init__(self): super(PRINT, self).__init__('PRINT')
 class PLUS(TOKEN):
-    def __init__(self): self.s = 'PLUS'
+    def __init__(self): super(PLUS, self).__init__('PLUS')
 class INTLIT(TOKEN):
-    def __init__(self, n):
-        self.n = int(n)
-        self.s = 'INT(%s)' % n
+    def __init__(self, n): super(INTLIT, self).__init__('INT(%s)' % n); self.n = int(n)
 class BAD(TOKEN):
-    def __init__(self): self.s = 'BAD'
+    def __init__(self): super(BAD, self).__init__('BAD')
