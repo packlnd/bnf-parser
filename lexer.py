@@ -12,13 +12,14 @@ def tokenize(fn):
     token_list = []
     with open(fn, 'r') as f:
         lines = f.readlines()
-    for line in lines:
+    for l in range(len(lines)):
+        line = lines[l]
         indentation = _determine_indentation(line)
         if indentation > i_list[0]:
-            token_list.append(INDENT())
+            token_list.append(INDENT(l, 0))
             i_list.insert(0, indentation)
         elif indentation < i_list[0]:
-            token_list.append(DEDENT())
+            token_list.append(DEDENT(l, 0))
             i_list.insert(0, indentation)
         current_indentation = indentation
         line = line.strip()
@@ -26,31 +27,31 @@ def tokenize(fn):
         while pos < len(line)-1:
             pos += 1
             if line[pos] == ':':
-                token_list.append(COLON())
+                token_list.append(COLON(l, pos))
             elif line[pos] == '+':
-                token_list.append(PLUS())
+                token_list.append(PLUS(l, pos))
             elif line[pos] == 'f':
                 if line[pos:pos+4] == 'func':
-                    token_list.append(FUNC())
+                    token_list.append(FUNC(l, pos))
                     pos += 3
             elif line[pos] == 'm':
                 if line[pos:pos+4] == 'main':
-                    token_list.append(MAIN())
+                    token_list.append(MAIN(l, pos))
                     pos += 3
             elif line[pos] == 'p':
                 if line[pos:pos+5] == 'print':
-                    token_list.append(PRINT())
+                    token_list.append(PRINT(l, pos))
                     pos += 4
             elif _is_digit(line[pos]):
                 end_pos = pos+1
                 while end_pos < len(line) and _is_digit(line[end_pos]):
                     end_pos += 1
-                token_list.append(INTLIT(line[pos:end_pos]))
+                token_list.append(INTLIT(line[pos:end_pos], l, pos))
                 pos = end_pos-1
             elif line[pos] == ' ':
                 continue
             else:
-                token_list.append(BAD())
+                token_list.append(BAD(l, pos))
     i_list.pop()
     for i in i_list:
        token_list.append(DEDENT())
