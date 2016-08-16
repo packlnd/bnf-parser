@@ -4,6 +4,10 @@ INSTR_SUB = 'sub'
 
 # TODO: http://www.fabiensanglard.net/macosxassembly/index.php
 
+def write_asm_file(content, fname):
+    with open(fname + '.asm', 'r') as f:
+        f.write(content)
+
 def global_routine(name):
     return (
         'global %s\n'
