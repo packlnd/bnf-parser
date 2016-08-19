@@ -3,7 +3,7 @@
 
 File extension: `.patrik`
 
-__Currently compiles from .patril to .asm. Have to use other tools to make an executable from the .asm file.
+__Currently compiles from .patril to .asm. Have to use other tools to make an executable from the .asm file.__
 
 ## Example usage:
 `python compiler.py file.patrik`
