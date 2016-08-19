@@ -3,14 +3,10 @@
 
 File extension: `.patrik`
 
+__Currently compiles from .patril to .asm. Have to use other tools to make an executable from the .asm file.
+
 ## Example usage:
-Use as an interpreter
-`python file.patrik interpreter`
-
-__To be implemented:__
-
-Use LLVM backend
-`python file.patrik llvm`
+`python compiler.py file.patrik`
 
 ## Grammar:
 
