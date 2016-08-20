@@ -3,10 +3,19 @@
 
 File extension: `.patrik`
 
-__Currently compiles from .patril to .asm. Have to use other tools to make an executable from the .asm file.__
+__Currently compiles from .patrik to .asm. You have to use other tools to make an executable from the .asm file.__
 
 ## Example usage:
-`python compiler.py file.patrik`
+```
+python compiler.py hello.patrik
+output: hello.asm
+
+nasm -f macho hello.asm
+output: hello.o
+
+ld -o hello -e mystart hello.o
+output: hello
+```
 
 ## Grammar:
 
