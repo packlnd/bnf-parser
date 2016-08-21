@@ -1,9 +1,10 @@
 def generate(goal):
-    asm = ""
-    generate_goal(goal)
+    asm = Asm()
+    generate_goal(goal, asm)
 
-def generate_goal(goal):
-    generate_main(goal.main)
+def generate_goal(goal, asm):
+    generate_main(goal.main, asm)
 
-def generate_main(main):
-    for stmt
+def generate_main(main, asm):
+    for stmt in main.statements:
+        generate_stmt(stmt, asm)
