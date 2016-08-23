@@ -3,9 +3,13 @@
 
 File extension: `.patrik`
 
-__Currently compiles from .patrik to .asm. You have to use other tools to make an executable from the .asm file.__
-
 ## Example usage:
+__File: hello.patrik:__
+```go
+func main:
+    print 1+2
+```
+
 ```
 python compiler.py hello.patrik
 output: hello.asm
@@ -13,8 +17,8 @@ output: hello.asm
 nasm -f macho hello.asm
 output: hello.o
 
-ld -o hello -e mystart hello.o
-output: hello
+ld hello.o
+output: 3
 ```
 
 ## Grammar:
