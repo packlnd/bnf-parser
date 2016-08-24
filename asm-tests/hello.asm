@@ -1,6 +1,6 @@
 section .text
-global mystart
-mystart:
+global start
+start:
 
 ; 1 print "hello, world"
 
